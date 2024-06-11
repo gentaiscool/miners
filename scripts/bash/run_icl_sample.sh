@@ -1,0 +1,1 @@
+python icl_sample.py --dataset nusax --seed 42 --instruction "Generate a sentiment label for a given input.\nPlease only output the label." --model_checkpoint intfloat/multilingual-e5-large --gen_model_checkpoint facebook/xglm-564M  --cuda --load_in_8bit --k 5

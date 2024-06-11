@@ -1,0 +1,11 @@
+datasets==2.19.1
+transformers==4.40.2
+sentence_transformers==2.7.0
+torch==2.3.0
+nusacrowd
+sentencepiece
+laser_encoders
+cohere
+openai
+accelerate
+bitsandbytes
