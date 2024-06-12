@@ -8,26 +8,33 @@
 </p>
 
 ## Table of Contents
+
 - [Paper](#-paper)
 - [Benchmark](#-benchmark)
 - [Environment Setup](#-environment-setup)
 - [Experiment Logs](#-experiment-logs)
 - [Running Experiments](#-running-experiments)
-	- [Bitext Retrieval](#-bitext-retrieval)
-	- [Retrieval-based Classification](#-retrieval-based-classification)
-	- [ICL Classification](#-icl-classification)
+	- [Bitext Retrieval](#bitext-retrieval)
+	- [Retrieval-based Classification](#retrieval-based-classification)
+	- [ICL Classification](#icl-classification)
 - [Aggregating Experiment Results](#-aggregating-experiment-results)
 - [Visualizing the Embeddings](#-visualizing-the-embeddings)
 - [Models Support](#-models-support)
 - [How to Contribute?](#-how-to-contribute)
 
-
 ## 📜 Paper 
-This is the source code of the paper [[Coming soon!]]():
+This is the source code of the paper [[Arxiv]](https://arxiv.org/abs/2406.07424):
 
 This code has been written using PyTorch. If you use any code or datasets from this toolkit in your research, please cite the associated paper.
 <pre>
-Coming soon!
+@misc{winata2024miners,
+    title={MINERS: Multilingual Language Models as Semantic Retrievers}, 
+    author={Genta Indra Winata and Ruochen Zhang and David Ifeoluwa Adelani},
+    year={2024},
+    eprint={2406.07424},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
 </pre>
 
 ## 📊 Benchmark
