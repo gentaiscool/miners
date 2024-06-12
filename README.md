@@ -11,7 +11,7 @@
 
 - [Paper](#-paper)
 - [Benchmark](#-benchmark)
-- [Environment Setup](# -environment-setup)
+- [Environment Setup](#-environment-setup)
 - [Experiment Logs](#-experiment-logs)
 - [Running Experiments](#-running-experiments)
 	- [Bitext Retrieval](#bitext-retrieval)
@@ -49,7 +49,7 @@ Our benchmark evaluates LMs on three tasks: bitext retrieval, retrieval-based cl
   <img src="assets/res_icl.png" width="53%">
 </p>
 
-## ⚙️ Environment Setup
+## ⚡ Environment Setup
 ```
 pip install -r requirements.txt
 ```
