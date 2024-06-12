@@ -11,7 +11,7 @@
 
 - [Paper](#-paper)
 - [Benchmark](#-benchmark)
-- [Environment Setup](#-environment-setup)
+- [Environment Setup](# -environment-setup)
 - [Experiment Logs](#-experiment-logs)
 - [Running Experiments](#-running-experiments)
 	- [Bitext Retrieval](#bitext-retrieval)
