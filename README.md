@@ -27,13 +27,11 @@ This is the source code of the paper [[Arxiv]](https://arxiv.org/abs/2406.07424)
 
 This code has been written using PyTorch. If you use any code or datasets from this toolkit in your research, please cite the associated paper.
 <pre>
-@misc{winata2024miners,
-    title={MINERS: Multilingual Language Models as Semantic Retrievers}, 
-    author={Genta Indra Winata and Ruochen Zhang and David Ifeoluwa Adelani},
-    year={2024},
-    eprint={2406.07424},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
+@article{winata2024miners,
+  title={MINERS: Multilingual Language Models as Semantic Retrievers},
+  author={Winata, Genta Indra and Zhang, Ruochen and Adelani, David Ifeoluwa},
+  journal={arXiv preprint arXiv:2406.07424},
+  year={2024}
 }
 </pre>
 
