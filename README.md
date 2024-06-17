@@ -21,6 +21,7 @@
 - [Visualizing the Embeddings](#-visualizing-the-embeddings)
 - [Models Support](#-models-support)
 - [How to Contribute?](#-how-to-contribute)
+- [On Progress](#on-progress)
 
 ## 📜 Paper 
 This is the source code of the paper [[Arxiv]](https://arxiv.org/abs/2406.07424):
@@ -167,3 +168,6 @@ Feel free to create [an issue](https://github.com/gentaiscool/miners/issues/) if
 If you are interested to create an extension of this work, feel free to reach out to [us](mailto:gentaindrawinata@gmail.com)!
 
 Support our open source effort ⭐
+
+## On Progress
+We are improving the code to make it more user-friendly and customizable. We have created a new repository for implementing DistFuse, which is available at [https://github.com/gentaiscool/distfuse/](https://github.com/gentaiscool/distfuse/). You can install it by running `pip install distfuse`. Later, it will be integrated to this repository.
