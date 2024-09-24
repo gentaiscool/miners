@@ -5,6 +5,7 @@ import numpy as np
 import argparse
 import json
 import cohere
+import transformers
 from openai import OpenAI
 
 from sentence_transformers import SentenceTransformer
@@ -340,7 +341,7 @@ if __name__ == "__main__":
         model = SentenceTransformer(args.model_checkpoint).cuda()
         batch_size = 128
 
-    if "mistralai/Mistral-7B-Instruct-v0.3" in args.gen_model_checkpoint or "meta-llama/Meta-Llama-3-8B-Instruct" in args.gen_model_checkpoint or "google/gemma-1.1-7b-it" in args.gen_model_checkpoint:
+    if "mistralai/Mistral-7B-Instruct-v0.3" in args.gen_model_checkpoint or "Meta-Llama-3-" in args.gen_model_checkpoint or "google/gemma-1.1-7b-it" in args.gen_model_checkpoint or "Meta-Llama-3.1-" in args.gen_model_checkpoint:
         if args.load_in_8bit:
             gen_model = AutoModelForCausalLM.from_pretrained(args.gen_model_checkpoint, token=HF_TOKEN, device_map="auto", load_in_8bit=True)
             tokenizer = AutoTokenizer.from_pretrained(args.gen_model_checkpoint, token=HF_TOKEN, device_map="auto", load_in_8bit=True)
@@ -365,6 +366,14 @@ if __name__ == "__main__":
         gen_model = OpenAI(api_key=OPENAI_TOKEN)
     elif "command-r" in args.gen_model_checkpoint:
         gen_model = cohere.Client(COHERE_TOKEN)
+    elif "Meta-Llama-3.1" in args.gen_model_checkpoint:
+        gen_model = transformers.pipeline(
+            "text-generation",
+            model=args.gen_model_checkpoint,
+            model_kwargs={"torch_dtype": torch.bfloat16},
+            device_map="auto",
+            token=HF_TOKEN
+        )
 
     if args.dataset == "nusax":
         dataset = NusaXDataset(prompt=args.prompt, task="classification")
@@ -477,7 +486,7 @@ if __name__ == "__main__":
                     for few_shot_sample_id in all_few_shot_samples_ids[text_id]:
                         few_shot_text += "Input:" + train_texts[few_shot_sample_id] + " Prediction:" + train_labels[few_shot_sample_id] + "\n"
                     text += few_shot_text + "\n"
-                if "CohereForAI/aya-101" in args.gen_model_checkpoint or "bigscience/mt0" in args.gen_model_checkpoint or "gpt-3.5-turbo" in args.gen_model_checkpoint or "gpt-4" in args.gen_model_checkpoint or "command-r" in args.gen_model_checkpoint or "meta-llama/Meta-Llama-3-8B-Instruct" in args.gen_model_checkpoint or "mistralai/Mistral-7B-Instruct-v0.3" in args.gen_model_checkpoint or "google/gemma-1.1-7b-it" in args.gen_model_checkpoint:
+                if "CohereForAI/aya-101" in args.gen_model_checkpoint or "bigscience/mt0" in args.gen_model_checkpoint or "gpt-3.5-turbo" in args.gen_model_checkpoint or "gpt-4" in args.gen_model_checkpoint or "command-r" in args.gen_model_checkpoint or "Meta-Llama-3-" in args.gen_model_checkpoint or "mistralai/Mistral-7B-Instruct-v0.3" in args.gen_model_checkpoint or "google/gemma-1.1-7b-it" in args.gen_model_checkpoint or "Meta-Llama-3.1" in args.gen_model_checkpoint:
                     text += "Options:" + str(dataset.TEXT_LABELS) + "\n"
                 text += "Input:" + test_texts[text_id] + " Prediction:"
 
@@ -490,7 +499,9 @@ if __name__ == "__main__":
                     hyp = get_mistral_instruct_chat_response(gen_model, tokenizer, args.gen_model_checkpoint, text, args.seed)
                 elif "google/gemma-1.1-7b-it" in args.gen_model_checkpoint:
                     hyp = get_gemma_response(gen_model, tokenizer, args.gen_model_checkpoint, text, args.seed)
-                elif "meta-llama/Meta-Llama-3-8B-Instruct" in args.gen_model_checkpoint:
+                elif "Meta-Llama-3-" in args.gen_model_checkpoint:
+                    hyp = get_llama3_instruct_chat_response(gen_model, tokenizer, args.gen_model_checkpoint, text, args.seed)
+                elif "Meta-Llama-3.1-" in args.gen_model_checkpoint:
                     hyp = get_llama3_instruct_chat_response(gen_model, tokenizer, args.gen_model_checkpoint, text, args.seed)
                 elif "CohereForAI/aya-101" in args.gen_model_checkpoint or "bigscience/mt0" in args.gen_model_checkpoint:
                     hyp = get_mt0_response(gen_model, tokenizer, args.gen_model_checkpoint, text, args.seed)

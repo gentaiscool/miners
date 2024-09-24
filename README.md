@@ -54,6 +54,11 @@ pip install -r requirements.txt
 ```
 If you wish to utilize the APIs or models from OpenAI, Cohere, or Hugging Face, modify the `OPENAI_TOKEN`, `COHERE_TOKEN`, and `HF_TOKEN`. Note that most models on Hugging Face do not require the `HF_TOKEN`, which is specifically intended for the llama and gemma models.
 
+If you wish to use Llama3.1, you need to upgrade the transformers version
+```
+pip install transformers==4.44.2
+```
+
 ## 📝 Experiment Logs
 If you wish to get all results and prompt examples from our experiments, feel free to download them [here](https://drive.google.com/file/d/1yG4VQDClLAhlyGZNxrnByZbOdU2kaAAR/view?usp=drive_link) (~360MB).
 
