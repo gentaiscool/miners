@@ -44,8 +44,8 @@ MINERS comprises **11** datasets: **7** multilingual and **4** code-switching da
 
 Our benchmark evaluates LMs on three tasks: bitext retrieval, retrieval-based classification, and ICL classification. The settings include **monolingual (Mono)**, **cross-lingual (XS)**, **code-switching (CS)**, and **cross-lingual code-switching (XS CS)**.
 <p align="center">
-  <img src="assets/res_bitext_classification.png" width=40%">
-  <img src="assets/res_icl.png" width="53%">
+  <img src="assets/res_bitext_classification.png" width=47%">
+  <img src="assets/res_icl_v2.png" width="50%">
 </p>
 
 ## ⚡ Environment Setup
@@ -163,6 +163,7 @@ Our codebase supports the usage of multiple models for the experiments, providin
 - Aya-101 [CohereForAI/aya-101](https://huggingface.co/CohereForAI/aya-101)
 - Gemma 1.1 Instruct [google/gemma-1.1-7b-it](https://huggingface.co/google/gemma-1.1-7b-it)
 - Llama 3 8B Instruct [meta-llama/Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+- Llama 3 8B Instruct [meta-llama/Meta-Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
 - GPT models  (last tested as of June 2024)
 - Cohere Command R  (last tested as of June 2024)
 
