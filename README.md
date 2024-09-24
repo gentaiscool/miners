@@ -44,8 +44,8 @@ MINERS comprises **11** datasets: **7** multilingual and **4** code-switching da
 
 Our benchmark evaluates LMs on three tasks: bitext retrieval, retrieval-based classification, and ICL classification. The settings include **monolingual (Mono)**, **cross-lingual (XS)**, **code-switching (CS)**, and **cross-lingual code-switching (XS CS)**.
 <p align="center">
-  <img src="assets/res_bitext_classification.png" width=47%">
-  <img src="assets/res_icl_v2.png" width="50%">
+  <img src="assets/res_bitext_classification.png" width=42%">
+  <img src="assets/res_icl_v2.png" width="53%">
 </p>
 
 ## ⚡ Environment Setup
