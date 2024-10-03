@@ -3,6 +3,8 @@
 
 ⚡ Introducing the **MINERS benchmark**, designed to assess the multilingual LMs' prowess in semantic retrieval tasks, including bitext mining and classification through retrieval-augmented contexts **without fine-tuning**. A comprehensive framework has been developed to evaluate the effectiveness of language models in retrieving samples across over **200 diverse languages**, including low-resource languages in challenging **cross-lingual (XS)** and **code-switching (CS)** settings. The results show that achieving competitive performance with state-of-the-art methods is possible by solely retrieving semantically similar embeddings, without requiring any fine-tuning.
 
+The paper has been accepted at EMNLP 2024 Findings.
+
 <p align="center">
   <img src="assets/pipeline.png" width="100%">
 </p>
